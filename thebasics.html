@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>The Basics</title>
+        <style>
+            html, body {
+                height: 100%;
+                margin: 0;
+            }
+            body {
+                display: flex;
+                flex-direction: column;
+            }
+            .titletext {
+                text-align: center;
+                margin-top: 20px;
+            }
+            .section {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                text-align: center;
+                align-items: center;
+                margin-top: 20px;
+                img {
+                    height: 240px;
+                    object-fit: cover;
+                    border-style: solid;
+                    border-color: black;
+                }
+            }
+            .text {
+                flex-direction: column;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="titletext" style="background-color: cadetblue;">
+            <h1 style="font-size: 50px;">The Basics</h1>
+            <hr>
+        </div>
+        <div class="section">
+            <div class="text">
+                <h2>Where I'm From</h2>
+                <p>I live in Oakton, Virginia, within Fairfax County.</p>
+                <p>It's a CDP (Census-Designated-Place, basically a named community) in Northern Virginia, right by Washington D.C.</p>
+            </div>
+            <div class="text">
+                <h2>Where I Was Born</h2>
+                <p>I was born in Marietta, Georgia.</p>
+                <p>I bounced around a lot as a child, from Georgia to Tennessee to China, until my family settled in Virginia in 2010.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="img">
+                <img src="images/basicsP/NoVA.jpg" alt="image failed to load">
+            </div>
+            <div class="img">
+                <img src="images/basicsP/marietta.jpg" alt="image failed to load">
+            </div>
+        </div>
+        <div class="section">
+            <div class="text">
+                <h2>My Culture</h2>
+                <p>I'm Wasian&mdash;half-White and half-Chinese.</p>
+                <p>I lived in China for a year as a baby, but I can't speak much Chinese.</p>
+            </div>
+            <div class="text">
+                <h2>My Education</h2>
+                <p>I'm currently a Freshman student at Northern Virginia Community College with a 4.0 GPA.</p>
+                <p>I have a guaranteed transfer to Georgia Tech beginning in the fall of my Sophomore Year.</p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="img">
+                <img src="images/basicsP/wasian.jpg" alt="image failed to load">
+            </div>
+            <div class="img">
+                <img src="images/basicsP/NoVACC.jpg" alt="image failed to load">
+            </div>
+        </div>
+        <a href="index.html" style="color: coral; font-size: 20px; text-align: right; margin-top: auto; margin-bottom: 20px; margin-right: 20px;">Back</a>
+    </body>
+</html>
