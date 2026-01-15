@@ -16,8 +16,28 @@
                 margin-top: 20px;
             }
             .section {
+                display: flex;
                 flex-direction: row;
-                margin-left: 20px;
+                width: 100%;
+                margin-bottom: 100px;
+            }
+            .text {
+                h2 {
+                    font-size: 30px;
+                }
+                p {
+                    margin-left: 20px;
+                    font-size: 20px;
+                    a {
+                        margin-right: 20px;
+                    }
+                }
+            }
+            .img {
+                margin-left: auto;
+                img {
+                    height: 150px;
+                }
             }
         </style>
     </head>
@@ -26,18 +46,37 @@
             <h1 style="font-size: 50px;">My Skills</h1>
             <hr>
         </div>
-        <h2 style="margin-top: 20px; margin-left: 20px;">Programming</h2>
         <div class="section">
-            <p>Java, Git, GDScript, JavaFX, JavaSwing, HTML, CSS, Kubernetes, React</p>
+            <div class="text">
+                <h2 style="margin-top: 20px; margin-left: 20px;">Programming</h2>
+                <p>Java, Git, GDScript, JavaFX, JavaSwing, HTML, CSS, Kubernetes, React</p>
+            </div>
+            <div class="img">
+                <img src="images/skillsP/programming.png" alt="image failed to load">
+            </div>
         </div>
-        <h2 style="margin-top: 20px; margin-left: 20px;">Projects</h2>
         <div class="section">
-            <p><a href="https://github.com/lukewhitlock/click-game">Clicker Game</a></p>
+            <div class="text">
+                <h2 style="margin-top: 20px; margin-left: 20px;">Projects</h2>
+                <p>
+                    <a href="https://github.com/lukewhitlock">GitHub:</a>
+                    <a href="https://github.com/lukewhitlock/click-game">Clicker Game</a>
+                    <a href="https://github.com/lukewhitlock/about-me-website">About Me Website</a>
+                </p>
+            </div>
+            <div class="img">
+                <img src="images/skillsP/project.png" alt="image failed to load">
+            </div>
         </div>
-        <h2 style="margin-top: 20px; margin-left: 20px;">Achievements</h2>
         <div class="section">
-            <p>1550 SAT - 770 Math & 780 English, National Merit Scholarship Finalist,
+            <div class="text">
+                <h2 style="margin-top: 20px; margin-left: 20px;">Achievements</h2>
+                <p>1550 SAT - 770 Math & 780 English, National Merit Scholarship Finalist,
                  4.4 High School GPA, 4.0 College GPA</p>
+            </div>
+            <div class="img">
+                <img src="images/skillsP/achievement.png" alt="image failed to load">
+            </div>
         </div>
         <a href="index.html" style="color: coral; font-size: 20px; text-align: right; 
         margin-top: auto; margin-bottom: 20px; margin-right: 20px;">Back</a>
