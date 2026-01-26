@@ -6,20 +6,20 @@ let currentPlayer = "X";
 let board = ["", "", "", "", "", "", "", "", ""];
 let gameActive = true;
 
-cell.forEach((cell, index) => {
-    cell.addEventListener("click", () => handleClickCell(index));
+cell.forEach((cell, index) => { //set up listener for each cell
+    cell.addEventListener("click", () => cellClick(index));
 });
 
-function handleCellClick(index) {
-  if (board[index] !== "" || !gameActive) return;
+function cellClick(index) { //action on click
+  if (board[index] !== "" || !gameActive) return; //if game is over or cell is full, does nothing
 
-  board[index] = currentPlayer;
-  cells[index].textContent = currentPlayer;
+  board[index] = currentPlayer; //fills board array with information
+  cell[index].textContent = currentPlayer; //visually fills cell with player
 
   checkWinner();
 }
 
-function checkWinner() {
+function checkWinner() { //checks if any player has won
   for (let pattern of winPatterns) {
     const [a, b, c] = pattern;
 
@@ -28,26 +28,26 @@ function checkWinner() {
       board[a] === board[b] &&
       board[a] === board[c]
     ) {
-      statusText.textContent = `Player ${currentPlayer} wins!`;
+      status.textContent = `Player ${currentPlayer} wins!`;
       gameActive = false;
       return;
     }
   }
 
   if (!board.includes("")) {
-    statusText.textContent = "It's a draw!";
+    status.textContent = "It's a draw!";
     gameActive = false;
     return;
   }
 
   currentPlayer = currentPlayer === "X" ? "O" : "X";
-  statusText.textContent = `Player ${currentPlayer}'s turn`;
+  status.textContent = `Player ${currentPlayer}'s turn`;
 }
 
 function resetGame() {
   board = ["", "", "", "", "", "", "", "", ""];
   gameActive = true;
   currentPlayer = "X";
-  statusText.textContent = "Player X's turn";
-  cells.forEach(cell => cell.textContent = "");
+  status.textContent = "Player X's turn";
+  cell.forEach(cell => cell.textContent = "");
 }
