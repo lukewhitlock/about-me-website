@@ -15,25 +15,48 @@
                 text-align: center;
                 margin-top: 20px;
             }
+            .page {
+                display: flex;
+                flex-direction: row;
+            }
             #tictactoe {
                 margin-left: 20px;
+                #tictactoeboard {
+                    display: grid;
+                    grid-template-columns: repeat(3, 100px);
+                    gap: 5px;
+                    margin-bottom: 20px;
+                    .cell {
+                        width: 100px;
+                        height: 100px;
+                        background-color: aliceblue;
+                        cursor: pointer;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-style: solid;
+                        border-width: 1px;
+                    }
+                }
             }
-            .board {
-                display: grid;
-                grid-template-columns: repeat(3, 100px);
-                gap: 5px 5px;
-                margin-bottom: 20px;
-            }
-            .cell {
-                width: 100px;
-                height: 100px;
-                background-color: aliceblue;
-                cursor: pointer;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                border-style: solid;
-                border-width: 1px;
+            #diceroll {
+                margin-left: 50px;
+                .die {
+                    display: grid;
+                    grid-template-columns: repeat(3, 50px);
+                    margin-bottom: 20px;
+                    border-style: solid;
+                    border-width: 1px;
+                    .cell {
+                        width: 50px;
+                        height: 50px;
+                        background-color: floralwhite;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        font-size: 100px;
+                    }
+                }
             }
         </style>
     </head>
@@ -42,31 +65,53 @@
             <h1 style="font-size: 50px;">App Showcase</h1>
             <hr>
         </div>
-        <div id="tictactoe">
-            <div class="board">
-                <div class="cell">
+        <div class="page">
+            <div id="tictactoe">
+                <h3>Tic Tac Toe</h3>
+                <div id="tictactoeboard">
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
                 </div>
-                <div class="cell">
-                </div>
-                <div class="cell">                   
-                </div>
-                <div class="cell">                    
-                </div>
-                <div class="cell">                    
-                </div>
-                <div class="cell">                    
-                </div>
-                <div class="cell">                   
-                </div>
-                <div class="cell">                   
-                </div>
-                <div class="cell">                 
-                </div>
+                <p id="status">Player X's Turn</p>
+                <button onclick="resetGame()">Reset</button>
             </div>
-            <p id="status">Player X's Turn</p>
-            <button onclick="resetGame()">Reset</button>
-            <script src="script.js"></script>
+            <div id="diceroll">
+                <h3>Dice Roll</h3>
+                <div class="die">
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                </div>
+                <div class="die">
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                    <div class="cell"></div>
+                </div>
+                <p id="total">Total: 0</p>
+                <button onclick="roll()">Roll</button>
+            </div>
         </div>
         <a href="index.html" style="color: coral; font-size: 20px; text-align: right; margin-top: auto; margin-bottom: 20px; margin-right: 20px;">Back</a>
+        <script src="javascript/tictactoe.js"></script>
+        <script src="javascript/diceroll.js"></script>
     </body>
 </html>
