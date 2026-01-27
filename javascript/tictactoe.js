@@ -28,20 +28,20 @@ function checkWinner() { //checks if any player has won
       board[a] === board[b] &&
       board[a] === board[c]
     ) {
-      status.textContent = `Player ${currentPlayer} wins!`;
+      status.textContent = `Player ${currentPlayer} Wins!`;
       gameActive = false;
       return;
     }
   }
 
   if (!board.includes("")) {
-    status.textContent = "It's a draw!";
+    status.textContent = "It's a Draw!";
     gameActive = false;
     return;
   }
 
   currentPlayer = currentPlayer === "X" ? "O" : "X";
-  status.textContent = `Player ${currentPlayer}'s turn`;
+  status.textContent = `Player ${currentPlayer}'s Turn`;
 }
 
 function resetGame() {
