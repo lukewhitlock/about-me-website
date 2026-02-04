@@ -7,17 +7,17 @@ let d1 = 0;
 let d2 = 0;
 let t = 0;
 
-function roll () {
+function roll () { //roll method
     d1 = Math.floor(Math.random() * 6) + 1;
     d2 = Math.floor(Math.random() * 6) + 1;
     t = d1 + d2;
     total.textContent = "Total: " + t;
-    display(d1, 0);
-    display(d2, 1);
+    display(d1, 0); //die 1 display
+    display(d2, 1); //die 2 display
 }
 
-function display (val, dieIndex) {
+function display (val, dieIndex) { //display method
     const cell = document.querySelectorAll(".die")[dieIndex].querySelectorAll(".cell");
-    cell.forEach(cell => cell.textContent = "");
-    patterns[val].forEach(i => cell[i].textContent = "·");
+    cell.forEach(cell => cell.textContent = ""); //clears each cell of die
+    patterns[val].forEach(i => cell[i].textContent = "·"); //based on value fills corresponding cells with middot
 }

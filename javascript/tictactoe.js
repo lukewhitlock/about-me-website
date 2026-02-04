@@ -48,6 +48,6 @@ function resetGame() {
   board = ["", "", "", "", "", "", "", "", ""];
   gameActive = true;
   currentPlayer = "X";
-  status.textContent = "Player X's turn";
+  status.textContent = "Player X's Turn";
   cell.forEach(cell => cell.textContent = "");
 }
