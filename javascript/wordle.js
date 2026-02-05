@@ -38,6 +38,7 @@ function start () {
         const cell = rows[i].querySelectorAll(".cell");
         for (let j = 0; j < 5; j++) {
             cell[j].textContent = "";
+            cell[j].style.backgroundColor = "darkGrey";
         }
     }
 }
@@ -59,13 +60,27 @@ function guess () {
     numGuesses++;
     const letters = val.split("");
     const cells = rows[numGuesses - 1].querySelectorAll(".cell");
+    let goalLettersTemp = goalLetters.slice();
     text.textContent = "" + (6 - numGuesses) + " Guesses Remaining";
     for (let i = 0; i < 5; i++) {
         cells[i].textContent = letters[i].toUpperCase();
-        if (cells[i].textContent === goalLetters[i])
+        if (cells[i].textContent === goalLettersTemp[i]) {
             cells[i].style.backgroundColor = "green";
-        else if (goalLetters.includes(cells[i].textContent))
+            goalLettersTemp[i] = null;
+        }
+    }
+    for (let i = 0; i < 5; i++) {
+        if (cells[i].style.backgroundColor === "green") continue;
+        cells[i].textContent = letters[i].toUpperCase();
+        if (goalLettersTemp.includes(cells[i].textContent)) {
             cells[i].style.backgroundColor = "yellow";
+            for (let j = 0; j < 5; j++) {
+                if (goalLettersTemp[j] === cells[i].textContent) {
+                    goalLettersTemp[j] = null;
+                    break;
+                }
+            }
+        }
     }
     input.value = "";
     check(cells);
